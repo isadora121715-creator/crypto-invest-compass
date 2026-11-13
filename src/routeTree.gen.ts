@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CarteiraRouteImport } from './routes/carteira'
 import { Route as CriptoRouteImport } from './routes/cripto'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as InvestimentosRouteImport } from './routes/investimentos'
@@ -19,6 +20,11 @@ import { Route as SimuladorRouteImport } from './routes/simulador'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarteiraRoute = CarteiraRouteImport.update({
+  id: '/carteira',
+  path: '/carteira',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CriptoRoute = CriptoRouteImport.update({
@@ -49,6 +55,7 @@ const SimuladorRoute = SimuladorRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/carteira': typeof CarteiraRoute
   '/cripto': typeof CriptoRoute
   '/duvidas': typeof DuvidasRoute
   '/investimentos': typeof InvestimentosRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/carteira': typeof CarteiraRoute
   '/cripto': typeof CriptoRoute
   '/duvidas': typeof DuvidasRoute
   '/investimentos': typeof InvestimentosRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/carteira': typeof CarteiraRoute
   '/cripto': typeof CriptoRoute
   '/duvidas': typeof DuvidasRoute
   '/investimentos': typeof InvestimentosRoute
@@ -75,12 +84,26 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/cripto' | '/duvidas' | '/investimentos' | '/perfil' | '/simulador'
+    | '/'
+    | '/carteira'
+    | '/cripto'
+    | '/duvidas'
+    | '/investimentos'
+    | '/perfil'
+    | '/simulador'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cripto' | '/duvidas' | '/investimentos' | '/perfil' | '/simulador'
+  to:
+    | '/'
+    | '/carteira'
+    | '/cripto'
+    | '/duvidas'
+    | '/investimentos'
+    | '/perfil'
+    | '/simulador'
   id:
     | '__root__'
     | '/'
+    | '/carteira'
     | '/cripto'
     | '/duvidas'
     | '/investimentos'
@@ -90,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CarteiraRoute: typeof CarteiraRoute
   CriptoRoute: typeof CriptoRoute
   DuvidasRoute: typeof DuvidasRoute
   InvestimentosRoute: typeof InvestimentosRoute
@@ -104,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carteira': {
+      id: '/carteira'
+      path: '/carteira'
+      fullPath: '/carteira'
+      preLoaderRoute: typeof CarteiraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cripto': {
@@ -146,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CarteiraRoute: CarteiraRoute,
   CriptoRoute: CriptoRoute,
   DuvidasRoute: DuvidasRoute,
   InvestimentosRoute: InvestimentosRoute,
