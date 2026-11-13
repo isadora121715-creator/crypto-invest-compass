@@ -68,7 +68,7 @@ export const glossario = [
   ["Dividendos", "Parte do lucro que empresas distribuem aos acionistas."],
   ["Diversificação", "Espalhar o dinheiro em vários tipos de investimento para reduzir riscos."],
   ["Perfil de investidor", "Conservador, moderado ou arrojado — define quanto risco você aceita."],
-];
+] as const;
 
 export const faq = [
   ["Quanto devo colocar em cripto?", "A maioria dos especialistas sugere entre 1% e 10% do patrimônio investido, dependendo do seu perfil. Só invista o que aceitaria ver cair pela metade."],
@@ -78,7 +78,7 @@ export const faq = [
   ["Preciso pagar imposto sobre cripto?", "Sim. Cripto deve ser declarada no IR e lucros acima do limite de isenção são tributados. As regras mudam com frequência — confira sempre a Receita Federal ou um contador."],
   ["Poupança vale a pena?", "Hoje, quase sempre não. Tesouro Selic e CDBs de 100% do CDI costumam render mais, com segurança semelhante."],
   ["O que é 'comprar na baixa'?", "Tentar acertar o fundo do preço é muito difícil, até para profissionais. Comprar todo mês (DCA) é mais simples e eficaz para iniciantes."],
-];
+] as const;
 
 export const perguntasPerfil = [
   { q: "Se seu investimento caísse 30% em um mês, você...", o: [["Venderia tudo na hora", 0], ["Ficaria nervoso, mas esperaria", 1], ["Compraria mais", 2]] },

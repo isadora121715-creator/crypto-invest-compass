@@ -15,7 +15,7 @@ const filtros = ["Todos", "Renda fixa", "Renda variável", "Cripto"];
 
 function Page() {
   const [f, setF] = useState("Todos");
-  const [aberto, setAberto] = useState<string | null>(investimentos[0].nome);
+  const [aberto, setAberto] = useState<string | null>(investimentos[0]?.nome ?? null);
   const lista = investimentos.filter((i) => f === "Todos" || i.tipo === f);
   return (
     <>

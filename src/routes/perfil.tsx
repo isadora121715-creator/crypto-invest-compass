@@ -19,19 +19,20 @@ function Page() {
   const [resp, setResp] = useState<number[]>([]);
   const fim = resp.length === perguntasPerfil.length;
   const perfil = perfilPorPontos(resp.reduce((a, b) => a + b, 0));
+  const atual = perguntasPerfil[resp.length];
   const semReserva = resp[2] === 0;
   return (
     <>
       <PageHeader kicker="Perfil" title="Onde é melhor eu investir?" sub="Responda com sinceridade. Não existe resposta certa — existe a que combina com você." />
       <div className="mx-auto max-w-3xl px-4 py-12">
-        {!fim ? (
+        {!fim && atual ? (
           <div key={resp.length} className="rounded-3xl border border-border bg-card p-8 animate-rise">
             <p className="text-sm text-muted-foreground">Pergunta {resp.length + 1} de {perguntasPerfil.length}</p>
             <div className="mt-2 h-1.5 rounded-full bg-secondary"><div className="h-full rounded-full bg-primary transition-all" style={{ width: `${(resp.length / perguntasPerfil.length) * 100}%` }} /></div>
-            <h2 className="mt-6 text-2xl font-bold">{perguntasPerfil[resp.length].q}</h2>
+            <h2 className="mt-6 text-2xl font-bold">{atual.q}</h2>
             <div className="mt-6 space-y-3">
-              {perguntasPerfil[resp.length].o.map(([t, v]) => (
-                <button key={t} onClick={() => setResp([...resp, v])} className="w-full rounded-xl border border-border bg-secondary p-4 text-left font-medium transition hover:border-primary hover:bg-primary/10">{t}</button>
+              {atual.o.map(([t, v]) => (
+                <button key={t} onClick={() => setResp([...resp, v as number])} className="w-full rounded-xl border border-border bg-secondary p-4 text-left font-medium transition hover:border-primary hover:bg-primary/10">{t}</button>
               ))}
             </div>
           </div>
