@@ -31,7 +31,7 @@ function Page() {
           {criptos.map((c) => (
             <div key={c.simbolo} className="rounded-2xl border border-border bg-card p-6">
               <div className="flex items-center justify-between">
-                <span className={`font-display text-2xl font-extrabold text-${c.cor}`}>{c.simbolo}</span>
+                <span className={`font-display text-2xl font-extrabold ${c.cor}`}>{c.simbolo}</span>
                 <RiskBadge risk={c.risco} />
               </div>
               <h3 className="mt-2 font-semibold">{c.nome}</h3>

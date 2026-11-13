@@ -28,11 +28,11 @@ export const investimentos = [
 ];
 
 export const criptos = [
-  { simbolo: "BTC", nome: "Bitcoin", cor: "chart-1", resumo: "A primeira e maior cripto. Oferta limitada a 21 milhões de unidades — por isso é chamada de 'ouro digital'.", uso: "Reserva de valor", risco: "Alto" as Risk },
-  { simbolo: "ETH", nome: "Ethereum", cor: "chart-3", resumo: "Plataforma para contratos inteligentes, DeFi e NFTs. O ETH paga as 'taxas' (gas) da rede.", uso: "Aplicações descentralizadas", risco: "Alto" as Risk },
-  { simbolo: "USDT/USDC", nome: "Stablecoins", cor: "chart-2", resumo: "Moedas pareadas ao dólar (1 = US$ 1). Úteis para 'estacionar' dinheiro sem sair do mundo cripto.", uso: "Dolarização e pagamentos", risco: "Médio" as Risk },
-  { simbolo: "SOL", nome: "Solana", cor: "chart-5", resumo: "Blockchain rápida e barata, popular para apps e memecoins. Já teve quedas de rede no passado.", uso: "Apps rápidos", risco: "Muito alto" as Risk },
-  { simbolo: "Altcoins", nome: "Outras moedas", cor: "chart-4", resumo: "Milhares de projetos menores. A maioria tende a perder valor ou desaparecer. Memecoins são pura especulação.", uso: "Especulação", risco: "Muito alto" as Risk },
+  { simbolo: "BTC", nome: "Bitcoin", cor: "text-chart-1", resumo: "A primeira e maior cripto. Oferta limitada a 21 milhões de unidades — por isso é chamada de 'ouro digital'.", uso: "Reserva de valor", risco: "Alto" as Risk },
+  { simbolo: "ETH", nome: "Ethereum", cor: "text-chart-3", resumo: "Plataforma para contratos inteligentes, DeFi e NFTs. O ETH paga as 'taxas' (gas) da rede.", uso: "Aplicações descentralizadas", risco: "Alto" as Risk },
+  { simbolo: "USDT/USDC", nome: "Stablecoins", cor: "text-chart-2", resumo: "Moedas pareadas ao dólar (1 = US$ 1). Úteis para 'estacionar' dinheiro sem sair do mundo cripto.", uso: "Dolarização e pagamentos", risco: "Médio" as Risk },
+  { simbolo: "SOL", nome: "Solana", cor: "text-chart-5", resumo: "Blockchain rápida e barata, popular para apps e memecoins. Já teve quedas de rede no passado.", uso: "Apps rápidos", risco: "Muito alto" as Risk },
+  { simbolo: "Altcoins", nome: "Outras moedas", cor: "text-chart-4", resumo: "Milhares de projetos menores. A maioria tende a perder valor ou desaparecer. Memecoins são pura especulação.", uso: "Especulação", risco: "Muito alto" as Risk },
 ];
 
 export const passosCripto = [

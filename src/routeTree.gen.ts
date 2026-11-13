@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CriptoRouteImport } from './routes/cripto'
+import { Route as DuvidasRouteImport } from './routes/duvidas'
+import { Route as InvestimentosRouteImport } from './routes/investimentos'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as SimuladorRouteImport } from './routes/simulador'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CriptoRoute = CriptoRouteImport.update({
+  id: '/cripto',
+  path: '/cripto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DuvidasRoute = DuvidasRouteImport.update({
+  id: '/duvidas',
+  path: '/duvidas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestimentosRoute = InvestimentosRouteImport.update({
+  id: '/investimentos',
+  path: '/investimentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimuladorRoute = SimuladorRouteImport.update({
+  id: '/simulador',
+  path: '/simulador',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cripto': typeof CriptoRoute
+  '/duvidas': typeof DuvidasRoute
+  '/investimentos': typeof InvestimentosRoute
+  '/perfil': typeof PerfilRoute
+  '/simulador': typeof SimuladorRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cripto': typeof CriptoRoute
+  '/duvidas': typeof DuvidasRoute
+  '/investimentos': typeof InvestimentosRoute
+  '/perfil': typeof PerfilRoute
+  '/simulador': typeof SimuladorRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cripto': typeof CriptoRoute
+  '/duvidas': typeof DuvidasRoute
+  '/investimentos': typeof InvestimentosRoute
+  '/perfil': typeof PerfilRoute
+  '/simulador': typeof SimuladorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/cripto' | '/duvidas' | '/investimentos' | '/perfil' | '/simulador'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/cripto' | '/duvidas' | '/investimentos' | '/perfil' | '/simulador'
+  id:
+    | '__root__'
+    | '/'
+    | '/cripto'
+    | '/duvidas'
+    | '/investimentos'
+    | '/perfil'
+    | '/simulador'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CriptoRoute: typeof CriptoRoute
+  DuvidasRoute: typeof DuvidasRoute
+  InvestimentosRoute: typeof InvestimentosRoute
+  PerfilRoute: typeof PerfilRoute
+  SimuladorRoute: typeof SimuladorRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cripto': {
+      id: '/cripto'
+      path: '/cripto'
+      fullPath: '/cripto'
+      preLoaderRoute: typeof CriptoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/duvidas': {
+      id: '/duvidas'
+      path: '/duvidas'
+      fullPath: '/duvidas'
+      preLoaderRoute: typeof DuvidasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investimentos': {
+      id: '/investimentos'
+      path: '/investimentos'
+      fullPath: '/investimentos'
+      preLoaderRoute: typeof InvestimentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulador': {
+      id: '/simulador'
+      path: '/simulador'
+      fullPath: '/simulador'
+      preLoaderRoute: typeof SimuladorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CriptoRoute: CriptoRoute,
+  DuvidasRoute: DuvidasRoute,
+  InvestimentosRoute: InvestimentosRoute,
+  PerfilRoute: PerfilRoute,
+  SimuladorRoute: SimuladorRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
